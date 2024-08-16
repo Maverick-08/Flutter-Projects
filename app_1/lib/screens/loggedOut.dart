@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:app_1/widgets/customButton.dart';
 
 class LoggedOut extends StatelessWidget {
   const LoggedOut({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         height: screenHeight,
@@ -55,6 +58,5 @@ class LoggedOut extends StatelessWidget {
         ),
       ),
     );
-  }
   }
 }
