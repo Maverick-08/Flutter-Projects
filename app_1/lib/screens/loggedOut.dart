@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Loggedout extends StatelessWidget {
-  const Loggedout({super.key});
+class LoggedOut extends StatelessWidget {
+  const LoggedOut({super.key});
 
   @override
   Widget build(BuildContext context) {
