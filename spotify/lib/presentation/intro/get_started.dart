@@ -36,7 +36,7 @@ class GetStarted extends StatelessWidget {
             color: Colors.black.withOpacity(0.15),
           ),
 
-          Padding(
+          Padding( // The Padding widget in Flutter is used to add empty space (padding) around its child widget. It’s a simple way to add space inside a layout.
             padding: const EdgeInsets.symmetric(
               vertical: 40,
               horizontal: 40

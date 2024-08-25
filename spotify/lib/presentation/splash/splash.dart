@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
-import 'package:spotify/presentation/pages/get_started.dart';
+import 'package:spotify/presentation/intro/get_started.dart';
 
 // The StatefulWidget class itself is immutable, meaning that once it’s 
 //created, it doesn’t change. However, it creates a mutable state object (State) that can change.

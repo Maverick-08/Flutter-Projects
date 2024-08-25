@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart'; // This line imports the material.dart package, which contains the Material Design components and features. Material Design is a design language developed by Google, and it's used to create visually consistent UIs across devices and platforms.
 import 'package:spotify/core/configs/themes/app_theme.dart';
-import 'package:spotify/presentation/pages/splash/splash.dart';
+import 'package:spotify/presentation/splash/splash.dart';
 
 void main() { // Entry point
   runApp(const MyApp());
