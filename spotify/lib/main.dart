@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart'; // This line imports the material.dart package, which contains the Material Design components and features. Material Design is a design language developed by Google, and it's used to create visually consistent UIs across devices and platforms.
+import 'package:spotify/core/configs/themes/app_theme.dart';
 
 void main() { // Entry point
   runApp(const MyApp());
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) { // The build method is responsible for describing the widget tree that will be rendered by this widget. This method returns a Widget, which becomes the UI of the MyApp widget.
 
   // The build method returns a MaterialApp widget. MaterialApp is a wrapper that provides several important features, such as navigation, theming, and localization, for the application.
-    return const MaterialApp();
+    return MaterialApp(
+      theme: AppTheme.lightTheme,
+      home: Container(),
+    );
   }
 }
