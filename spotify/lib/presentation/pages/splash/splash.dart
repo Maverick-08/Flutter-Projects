@@ -10,9 +10,14 @@ class SplashScreen extends StatefulWidget {
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
-  // The State class is where the mutable state is stored. This class is 
-  //responsible for holding any values that can change during the widget’s 
-  //lifecycle and for rebuilding the widget when these values change.
+  // 1. createState(): This method is called by the Flutter framework to create the state object for a StatefulWidget. createState() method returns a 
+  // new instance of _SplashScreenState
+
+  // 2. State<SplashScreen>: Specifies that the state object is tied to the SplashScreen widget.
+  
+  // 3. _SplashScreenState is a class that extends State<SplashScreen>. It 
+  // is where the mutable state and the logic for the SplashScreen widget are defined.
+
 }
 
 class _SplashScreenState extends State<SplashScreen> {
