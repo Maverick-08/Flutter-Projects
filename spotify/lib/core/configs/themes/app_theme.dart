@@ -65,3 +65,10 @@ class AppTheme {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30)))));
 }
+
+// Using ThemeData allows you to:
+
+// 1. Maintain Consistency: Apply the same visual style across your app.
+// 2. Easily Switch Themes: Support light and dark modes or custom themes.
+// 3. Centralize Styling: Change the appearance of the entire app by 
+// modifying one theme.
