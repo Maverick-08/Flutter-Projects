@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify/common/widgets/buttons/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/themes/app_colors.dart';
@@ -68,7 +69,8 @@ class GetStarted extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20,)
+                  const SizedBox(height: 20,),
+                  BasicAppButton((){}, "Get Started", 72)
                 ],
               ),
           ),
