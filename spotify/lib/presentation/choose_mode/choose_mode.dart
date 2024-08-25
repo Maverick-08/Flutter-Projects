@@ -4,10 +4,10 @@ import 'package:spotify/common/widgets/buttons/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/themes/app_colors.dart';
-import 'package:spotify/presentation/choose_mode/choose_mode.dart';
+// import 'package:spotify/core/configs/themes/app_colors.dart';
 
-class GetStarted extends StatelessWidget {
-  const GetStarted({super.key});
+class ChooseMode extends StatelessWidget {
+  const ChooseMode({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class GetStarted extends StatelessWidget {
                 image: DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage(
-                      AppImages.introBg,
+                      AppImages.chooseModeBg,
                     ))),
           ),
 
@@ -44,32 +44,74 @@ class GetStarted extends StatelessWidget {
                 ),
                 const Spacer(),
                 const Text(
-                  'Enjoy Listening To Music',
+                  'Choose Mode',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 18),
                 ),
                 const SizedBox(
-                  height: 21,
+                  height: 24,
                 ),
-                const Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.grey,
-                      fontSize: 13),
-                  textAlign: TextAlign.center,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.5),
+                              shape: BoxShape.circle),
+                          child: SvgPicture.asset(AppVectors.moon,
+                              fit: BoxFit.none),
+                        ),
+                        const SizedBox(height: 16,),
+                        const Text(
+                          "Dark mode",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.grey
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(width: 50),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.5),
+                              shape: BoxShape.circle),
+                          child: SvgPicture.asset(AppVectors.sun,
+                              fit: BoxFit.none),
+                        ),
+                        const SizedBox(height: 16,),
+                        const Text(
+                          "Light mode",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: AppColors.grey,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
                 BasicAppButton(() {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const ChooseMode()));
-                }, "Get Started", 72)
+                }, "Continue", 72)
               ],
             ),
           ),
