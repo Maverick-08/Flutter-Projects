@@ -10,8 +10,13 @@ class GetStarted extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // The Stack widget allows you to place widgets on top of each other. It's similar to the concept of layers, where widgets are positioned relative to the edges of the stack or on top of each other.
       body: Stack(
         children: [
+          // The Container widget is a versatile widget in Flutter that can 
+          // contain a single child and allows you to apply padding, margins, 
+          // decoration (allows you to set backgroung Image, borders and other
+          // decorations)
           Container(
             padding: const EdgeInsets.symmetric(
               vertical: 40,
