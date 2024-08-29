@@ -1,3 +1,4 @@
+import 'package:app_2/widgets/side_menue_widget.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -5,6 +6,26 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: SizedBox(
+                child: SideMenueWidget(),
+              )
+            ),
+            Expanded(
+              flex: 7,
+              child: Container(color: Colors.lightBlue)
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(color: Colors.lightGreen)
+            )
+          ],
+        )),
+    );
   }
 }
