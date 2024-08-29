@@ -4,7 +4,8 @@ import 'package:spotify/common/widgets/buttons/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/themes/app_colors.dart';
-// import 'package:spotify/core/configs/themes/app_colors.dart';
+import 'package:spotify/presentation/choose_mode/bloc/theme_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChooseMode extends StatelessWidget {
   const ChooseMode({super.key});
@@ -59,22 +60,28 @@ class ChooseMode extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.5),
-                              shape: BoxShape.circle),
-                          child: SvgPicture.asset(AppVectors.moon,
-                              fit: BoxFit.none),
+                        GestureDetector(
+                          onTap: () {
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.dark);
+                          },
+                          child: Container(
+                            height: 80,
+                            width: 80,
+                            decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.5),
+                                shape: BoxShape.circle),
+                            child: SvgPicture.asset(AppVectors.moon,
+                                fit: BoxFit.none),
+                          ),
                         ),
-                        const SizedBox(height: 16,),
+                        const SizedBox(
+                          height: 16,
+                        ),
                         const Text(
                           "Dark mode",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: AppColors.grey
-                          ),
+                          style: TextStyle(fontSize: 16, color: AppColors.grey),
                         )
                       ],
                     ),
@@ -82,7 +89,13 @@ class ChooseMode extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        GestureDetector(
+                          onTap: (){
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.light);
+                          },
+                          child: Container(
                           height: 80,
                           width: 80,
                           decoration: BoxDecoration(
@@ -91,7 +104,10 @@ class ChooseMode extends StatelessWidget {
                           child: SvgPicture.asset(AppVectors.sun,
                               fit: BoxFit.none),
                         ),
-                        const SizedBox(height: 16,),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
                         const Text(
                           "Light mode",
                           style: TextStyle(
