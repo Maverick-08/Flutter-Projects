@@ -1,3 +1,5 @@
+import 'package:app_2/configs/themes/app_colors.dart';
+import 'package:app_2/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Dashboard UI",
-      
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: AppColors.backgroundColor
+      ),
+      home: const MainScreen(),
     );
   }
 }
