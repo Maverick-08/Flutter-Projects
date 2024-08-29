@@ -1,15 +1,66 @@
+import 'package:app_2/configs/themes/app_colors.dart';
+import 'package:app_2/data/side_menue_data.dart';
 import 'package:flutter/material.dart';
 
-class SideMenueWidget extends StatefulWidget {
-  const SideMenueWidget({super.key});
+class SideMenuWidget extends StatefulWidget {
+  const SideMenuWidget({super.key});
 
   @override
-  State<SideMenueWidget> createState() => _SideMenueWidgetState();
+  State<SideMenuWidget> createState() => _SideMenuWidgetState();
 }
 
-class _SideMenueWidgetState extends State<SideMenueWidget> {
+class _SideMenuWidgetState extends State<SideMenuWidget> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final data = SideMenuData();
+
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+      color: const Color(0xFF171821),
+      child: ListView.builder(
+        itemCount: data.menue.length,
+        itemBuilder: (context, index) => buildMenuEntry(data, index),
+      ),
+    );
+  }
+
+  Widget buildMenuEntry(SideMenuData data, int index) {
+    final isSelected = selectedIndex == index;
+
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(6.0),
+        ),
+        color: isSelected ? AppColors.selectionColor : Colors.transparent,
+      ),
+      child: InkWell(
+        onTap: () => setState(() {
+          selectedIndex = index;
+        }),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 7),
+              child: Icon(
+                data.menue[index].icon,
+                color: isSelected ? Colors.black : Colors.grey,
+              ),
+            ),
+            Text(
+              data.menue[index].title,
+              style: TextStyle(
+                fontSize: 16,
+                color: isSelected ? Colors.black : Colors.grey,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
